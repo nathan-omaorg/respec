@@ -15,6 +15,7 @@
   },
   "author": "Robin Berjon",
   "devDependencies": {
+    "clipboard": "^1.6.0",
     "babel-cli": "^6.23.0",
     "babel-plugin-transform-async-to-generator": "^6.22.0",
     "babel-plugin-transform-es2015-modules-amd": "^6.22.0",

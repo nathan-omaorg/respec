@@ -1081,6 +1081,7 @@ define(
             // Skip this <pre> and move on to the next one.
             return;
           }
+          this.id = this.id ? this.id : "webidl-" + String(Math.random()).substr(2);
           linkDefinitions(parse, conf.definitionMap, "", this);
           var $df = makeMarkup(conf, parse);
           $df.attr({ id: this.id });

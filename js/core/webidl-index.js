@@ -2,13 +2,10 @@
  * Module: core/webidl-index
  * constructs a summary of WebIDL in the document by
  * cloning all the generated contiguous WebIDL nodes and
- * appending them to pre element.
+ * appending them to a section element.
  *
  * Usage
- * Add a <section id="idl-index"> to the document.
- * It also supports title elements to generate a header.
- * Or if a header element is an immediate child, then
- * that is preferred.
+ * https://github.com/w3c/respec/wiki/issue-summary
  */
 "use strict";
 define(["core/webidl-contiguous"], function(webIDL) {
@@ -21,7 +18,7 @@ define(["core/webidl-contiguous"], function(webIDL) {
     // Query for decedents headings, e.g., ":scope > h2, etc.."
     const query = [2, 3, 4, 5, 6]
       .map(function(level) {
-        return ":scope > h" + level;
+        return "h" + level + ":first-child"
       })
       .join(",");
     if (!idlIndexSec.querySelector(query)) {
@@ -44,6 +41,7 @@ define(["core/webidl-contiguous"], function(webIDL) {
         const virtualSummary = document.createDocumentFragment();
         const pre = document.createElement("pre");
         pre.classList.add("idl", "def");
+        pre.id = "respec-idl-summary";
         Array
           .from(document.querySelectorAll("pre.def.idl"))
           .map(function(elem) {
