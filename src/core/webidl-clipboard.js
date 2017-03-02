@@ -34,7 +34,7 @@ export async function run(conf, doc, cb) {
       return { button, elem };
     })
     .forEach(({ elem, button }) => {;
-      elem.insertAdjacentElement("beforebegin", button)
+      elem.insertAdjacentElement("afterbegin", button)
     });
   const clipboard = new Clipboard(".respec-button-copy-paste", clipboardOps);
   clipboard.on("success", e => e.clearSelection());
