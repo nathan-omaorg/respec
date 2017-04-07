@@ -1,0 +1,8 @@
+
+/* Style for a public "Draft" */
+
+@import "https://www.w3.org/StyleSheets/TR/2016/base.css";
+
+body {
+  background-image: url(https://nathan-omaorg.github.io/respec/assets/logo-CANDIDATE.png);
+}
