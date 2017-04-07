@@ -104,13 +104,18 @@ export function run(conf, doc, cb) {
     pub("warn", warn);
   }
 
-  var styleBaseURL = "https://www.w3.org/StyleSheets/TR/{version}";
+  var styleBaseURL = "https://nathan-omaorg.github.io/respec/stylesheets/";
   var finalStyleURL = "";
-  var styleFile = "W3C-";
+  var styleFile = "OMA-";
 
   // Figure out which style file to use.
   switch (conf.specStatus.toUpperCase()) {
     case "DRAFT":
+        styleFile += "DRAFT.css";
+        break;
+    case "CANDIDATE":
+        styleFile += "CANDIDATE.css";
+        break;
     case "CG-DRAFT":
     case "CG-FINAL":
     case "BG-DRAFT":

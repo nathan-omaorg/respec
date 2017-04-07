@@ -45,7 +45,8 @@ define([
     "core/ui",
     "core/aria",
     "core/style",
-    "w3c/style",
+    //"w3c/style",
+    "oma/style",
     "core/l10n",
     "w3c/l10n",
     "core/data-include",
@@ -81,8 +82,8 @@ define([
     "ui/save-html",
     "ui/search-specref",
     "w3c/seo",
-    "core/highlight",/*,
-    "oma/test",*/
+    "core/highlight",
+    //"oma/test",
     /*Linter must be the last thing to run*/
     "w3c/linter"
   ],
